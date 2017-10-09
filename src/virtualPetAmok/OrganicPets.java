@@ -1,9 +1,11 @@
 package virtualPetAmok;
 
 public interface OrganicPets {
-	
-	void comandFeed();
 
-	void comandWater();
-		
+	public void comandFeed();
+
+	public void comandWater();
+
+	public void currentNeedLevels();
+
 }

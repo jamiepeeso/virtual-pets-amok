@@ -2,5 +2,7 @@ package virtualPetAmok;
 
 public interface RobotPets {
 
-	void comandOil();
+	public void comandOil();
+
+	public void currentNeedLevels();
 }
