@@ -2,31 +2,52 @@ package virtualPetAmok;
 
 abstract class VirtualPet {
 
-	protected String name;
-	protected String description;
+	private String name;
+	private String description;
+	private int healthLevel;
+	private int happinessLevel;
 
-	protected int healthLevel;
-	protected int happinessLevel;
-
-	public VirtualPet(String name, String description) {
+	public VirtualPet(String name, String description, int healthLevel, int happinessLevel) {
 		this.name = name;
 		this.description = description;
-		this.healthLevel = 100;
-		this.happinessLevel = 50;
+		this.healthLevel = healthLevel;
+		this.happinessLevel = happinessLevel;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public int getHealth() {
+	public String getDescription() {
+		return description;
+	}
+
+	public int getHealthLevel() {
 		return healthLevel;
 	}
 
-	@Override
-	public String toString() {
-		return name + ":" + " description: " + description + ", Health: " + healthLevel + ", Happiness: "
-				+ happinessLevel + ", exsists = ";
+	public int getHappinessLevel() {
+		return happinessLevel;
+	}
+
+	public void setHappinessLevel(int happinessLevel) {
+		this.happinessLevel = happinessLevel;
+	}
+
+	public void setHealthLevel(int healthLevel) {
+		this.healthLevel = healthLevel;
+	}
+
+	void commandPlay() {
+		setHappinessLevel(getHappinessLevel() + 10);
+	}
+
+	public void tick() {
+	}
+
+	public String getPetType() {
+		String className = getClass().getSimpleName();
+		return className;
 	}
 
 }
